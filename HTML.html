@@ -1,0 +1,235 @@
+<!DOCTYPE HTML> 
+<HTML lang="nl"> 
+<HEAD> 
+<meta charset="utf-8"/>
+<TITLE>Profitability</TITLE> 
+<link rel="shortcut icon" type="image/jpg" href="img/favicon2.jpg">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light1", // "light2", "dark1", "dark2"
+	animationEnabled: true, // change to true	
+	animationDuration: 4000,
+	backgroundColor: "white",
+	title:{
+		text: "Profitability"
+	},
+	axisX: {
+                    title: "Fiscal Year",
+					
+                },
+
+                axisY: {
+                    title: "Ratio",
+					maximum: "120",
+					interval: 20,
+					includeZero: true,
+		
+				},
+	data: [
+	{
+		// Change type to "bar", "area", "spline", "pie",etc.
+		type: "column",
+		name: "return on equity",
+		showInLegend: true,
+		visible: true, 
+        color: "Red",
+        exportEnabled: true,
+		yValueFormatString: "###.##\"%\"",
+		dataPoints: [
+			{ label: "2019",  y: 14.20  },
+			{ label: "2018", y: 30.28  },
+			{ label: "2017", y: 20.50  }
+		]
+	},
+	{
+		type: "column",
+		name: "Sector average: Return on equity",
+		showInLegend: true,
+		visible: true, 
+        
+        exportEnabled: true,
+		yValueFormatString: "###.##\"%\"",
+		dataPoints: [
+			{ label: "2019",  y: 0 },
+			{ label: "2018", y: 112.52  },
+			{ label: "2017", y: 19.03  }
+		]
+	},
+	{
+		type: "column",
+		name: "return on assets",
+		showInLegend: true,
+		visible: true, 
+        color: "black",
+        exportEnabled: true,
+		yValueFormatString: "###.##\"%\"",
+		dataPoints: [
+			{ label: "2019",  y: 4.73  },
+			{ label: "2018", y: 9.82  },
+			{ label: "2017", y: 5.32  }
+		]
+	},
+	
+	{
+		type: "column",
+		name: "Sector average: Return on assets",
+		showInLegend: true,
+		visible: true, 
+        
+        exportEnabled: true,
+		yValueFormatString: "###.##\"%\"",
+		dataPoints: [
+			{ label: "2019",  y: 0 },
+			{ label: "2018", y: 28.46  },
+			{ label: "2017", y: 8.21  }
+		]
+	}]
+});
+chart.render();
+}
+
+</script>
+<style>
+#Rendabiliteit01 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#Rendabiliteit01 td, #Rendabiliteit th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#t01 {
+  background-color: #f2f2f2;
+}
+#t02 {
+  background-color: #F9F9F9;
+}
+#t03 {
+  background-color: #f2f2f2;
+}
+#t04 {
+  background-color: #F9F9F9;
+}
+#Rendabiliteit01 tr:hover {background-color: #ddd;}
+
+#Rendabiliteit01 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: red;
+  color: white;
+}
+body {
+	background-color: #EBEBEB;
+}
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+#rcorners1 {
+  border-radius: 25px;
+  background: #FFFFFF;
+  padding: 5px; 
+  width: 100%;
+  height: 40px;  
+}
+#rcorners2 {
+  border-radius: 25px;
+  background: #FFFFFF;
+  padding: 15px; 
+  width: 300px;
+  height: 60px;  
+}
+#chartContainer	{
+width: 100%;
+}
+#blub {
+width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+<img src= "FlamingoPetProducts.png" alt="Flamingo logo" width="130" >
+<h1 id="rcorners1">Profitability</h1>
+
+<ul id="rcorners2">
+<li><a href="#Rendabiliteit">Profitability Flamingo Pet Products</a></li>
+
+<li><a href="#chartContainerA">Chart Flamingo Pet Products</a></li>
+
+<li><a href="#Conclusion">Conclusion</a></li>
+
+<li><a href="#Company video">Company video</a></li>
+</ul>
+<h3 id="Rendabiliteit">Profitability Flamingo Pet Products</h3>
+<table id="Rendabiliteit01">
+  <tr>
+    <th>Fiscal year</th>
+    <th>2019</th>
+    <th>2018</th>
+    <th>2017</th>
+  </tr>
+  
+  <tr id="t01">
+    <td>Return on equity</td>
+    <td>14.20%</td>
+    <td>30.28%</td>
+    <td>20.50%</td>
+  </tr>
+  <tr id="t02">
+    <td>Sector average</td>
+    <td></td>
+    <td>112.52%</td>
+    <td>19.03%</td>
+  </tr>
+  <tr id="t03">
+    <td>Return on assets</td>
+    <td>4.73%</td>
+    <td>9.82%</td>
+    <td>5.32%</td>
+  </tr>
+  <tr id="t04">
+    <td>Sector average</td>
+    <td></td>
+    <td>28.46%</td>
+    <td>8.21%</td>
+  </tr>
+</table>
+<br><br>
+<h3 id="chartContainerA">Chart Flamingo Pet Products</h3>
+<div id="chartContainer" style="height: 370px"></div>
+<br><br>
+<footer>
+<h3 id="Conclusion">Conclusion</h3>
+<p>Profitability On equity: For every € 100 you buy in shares, you made € 14.20 profit in 2019.</p>
+<p>Profitability On equity: Yes, it is advantageous because, 14.20% &#62; 2.5% (return on savings account) and 14.20% &#60; 112.52% (sector average)</p>
+<p>Profitability On assets: Flamingo Pet Products made €4.73 compared to their assets that were invested.</p>
+<p>Profitability On assets: Yes, it is advantageous because, 4.73% &#60; 28.46% (sector average) and 4.73% &#62; 2.5% (return on savings account).</p>
+<h3 id="Company video">Company video</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fTrzO2GvsZ0" title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+Video courtesy of
+<a href="https://www.youtube.com/watch?v=fTrzO2GvsZ0" target="_blank"> FPPCompanyVid</a>.
+</p>
+<img id="blub" src= "FPP.jpg" alt="Flamingo motto" height="200">
+</footer>
+
+</body>
+</html>
